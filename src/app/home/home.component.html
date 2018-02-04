@@ -5,7 +5,7 @@
      fxLayoutAlign.gt-md="space-around center"
      fxLayoutGap="10px">
 
-  <md-card *ngIf="dish" fxFlex>
+  <md-card *ngIf="dish" fxFlex [@expand]>
     <md-card-header>
       <div md-card-avatar></div>
       <md-card-title>
@@ -18,16 +18,16 @@
       </p>
     </md-card-content>
   </md-card>
-  <div [hidden]="dish || dishErrMess">
+  <div [hidden]="dish || dishErrMess" [@expand]>
       <md-spinner></md-spinner> <h4> Loading ... Please Wait</h4>
   </div>
-  <div> 
+  <div *ngIf="dishErrMess"> 
     <h2>Error</h2>
     <h4>{{dishErrMess}}</h4>
   </div>
 
 
-  <md-card *ngIf="promotion" fxFlex>
+  <md-card *ngIf="promotion" fxFlex [@expand]>
     <md-card-header>
       <div md-card-avatar></div>
       <md-card-title>
